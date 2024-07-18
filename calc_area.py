@@ -15,7 +15,7 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
-        return math.pi * self.radius ** 2
+        return round((math.pi * self.radius ** 2), 2)
 
 
 class Triangle(Shape):
@@ -36,13 +36,15 @@ class Triangle(Shape):
         return flag
 
     def area(self):
-        s = (self.side1 + self.side2 + self.side3) / 2
-        area = math.sqrt(s * (s - self.side1) * (s - self.side2) * (s - self.side3))
-        return area
+        if self.can_be_triangle():
+            s = (self.side1 + self.side2 + self.side3) / 2
+            area = math.sqrt(s * (s - self.side1) * (s - self.side2) * (s - self.side3))
+            return area
+        else:
+            ValueError('Sides cannot form a triangle ')
 
     def is_rectangular(self):
         sides = [self.side1, self.side2, self.side3]
         max_side = max(sides)
         sides.pop(max_side)
-        return max_side**2 == sides[0] ** 2 + sides[1] ** 2
-
+        return max_side ** 2 == sides[0] ** 2 + sides[1] ** 2
