@@ -34,3 +34,7 @@ class Triangle(Shape):
         return self.side1 ** 2 == (self.side2 ** 2 + self.side3 ** 2) or \
                self.side2 ** 2 == (self.side1 ** 2 + self.side3 ** 2) or \
                self.side3 ** 2 == (self.side1 ** 2 + self.side2 ** 2)
+
+
+def print_area(shape):
+    print(f"Area: {shape.calculate_area()}")
