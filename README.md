@@ -34,7 +34,7 @@ print(f"Является прямоугольным {rectangular} ")
 ```
 
 
-Так же определен функция print_area которая принимает любую форму 
+Так же определена функция print_area которая принимает любую форму 
 ```python
 def print_area(shape):  
     print(f"Area: {shape.calculate_area()}")
